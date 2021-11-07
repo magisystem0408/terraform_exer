@@ -16,9 +16,9 @@ resource "aws_vpc" "vpc" {
 
 //ここからサブネット
 resource "aws_subnet" "public_subnet_1a" {
-  cidr_block              = "192.168.1.0/24"
-  vpc_id                  = aws_vpc.vpc.id
-  availability_zone       = "ap-northeast-1a"
+  cidr_block        = "192.168.1.0/24"
+  vpc_id            = aws_vpc.vpc.id
+  availability_zone = "ap-northeast-1a"
 
   //  自動割り当てIP設定
   map_public_ip_on_launch = true
