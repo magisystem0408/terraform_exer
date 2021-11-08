@@ -22,7 +22,7 @@ resource "aws_security_group_rule" "web_in_https" {
   to_port           = 443
   type              = "ingress"
   //  ciderかsource_security_groupで指定する
-  cidr_blocks       = ["0.0.0.0/0"]
+  cidr_blocks = ["0.0.0.0/0"]
 }
 
 //アウトバウンド定義
@@ -32,9 +32,9 @@ resource "aws_security_group_rule" "web_out_tcp3000" {
   protocol          = "tcp"
   security_group_id = aws_security_group.web_sg.id
   //  終了ポート番号
-  to_port           = 3000
+  to_port = 3000
   //  インバウンド(ingress)かアウトバウンド(egress)か
-  type              = "egress"
+  type = "egress"
 
   //  ciderかsource_security_groupで指定する
   source_security_group_id = aws_security_group.app_sg.id
@@ -61,9 +61,9 @@ resource "aws_security_group_rule" "app_in_tcp3000" {
   protocol          = "tcp"
   security_group_id = aws_security_group.app_sg.id
   //  終了ポート番号
-  to_port           = 3000
+  to_port = 3000
   //  インバウンド(ingress)かアウトバウンド(egress)か
-  type              = "ingress"
+  type = "ingress"
 
   //  ciderかsource_security_groupで指定する
   source_security_group_id = aws_security_group.web_sg.id
@@ -77,7 +77,7 @@ resource "aws_security_group_rule" "app_out_tcp3000" {
   from_port         = 80
   to_port           = 80
   #  プレフィックスリストを設定するときは専用のものがある。
-  prefix_list_ids   = [data.aws_prefix_list.s3_pl.id]
+  prefix_list_ids = [data.aws_prefix_list.s3_pl.id]
 }
 
 #app→httpへのアウトバウンド
@@ -85,8 +85,8 @@ resource "aws_security_group_rule" "app_out_http" {
   security_group_id = aws_security_group.app_sg.id
   type              = "egress"
   protocol          = "tcp"
-  from_port         = 80
-  to_port           = 80
+  from_port         = 443
+  to_port           = 443
   prefix_list_ids   = [data.aws_prefix_list.s3_pl.id]
 }
 
@@ -118,9 +118,9 @@ resource "aws_security_group" "opmg_sg" {
 #インバウンド
 #ssh用
 resource "aws_security_group_rule" "opmg_in_ssh" {
-  security_group_id = aws_security_group.web_sg.id
-  type              = "ingress"
+  security_group_id = aws_security_group.opmg_sg.id
   protocol          = "tcp"
+  type              = "ingress"
   from_port         = 22
   to_port           = 22
   cidr_blocks       = ["0.0.0.0/0"]
@@ -128,18 +128,18 @@ resource "aws_security_group_rule" "opmg_in_ssh" {
 
 #https用
 resource "aws_security_group_rule" "opmng_in_tcp3000" {
-  from_port         = 3000
   protocol          = "tcp"
-  security_group_id = aws_security_group.web_sg.id
-  to_port           = 3000
   type              = "ingress"
+  security_group_id = aws_security_group.opmg_sg.id
   cidr_blocks       = ["0.0.0.0/0"]
+  from_port         = 3000
+  to_port           = 3000
 }
 
 #アウトバウンド
 #http用ポート
 resource "aws_security_group_rule" "opmng_out_http" {
-  security_group_id = aws_security_group.web_sg.id
+  security_group_id = aws_security_group.opmg_sg.id
   type              = "egress"
   protocol          = "tcp"
   from_port         = 80
@@ -149,7 +149,7 @@ resource "aws_security_group_rule" "opmng_out_http" {
 
 #https用ポート
 resource "aws_security_group_rule" "opmng_out_https" {
-  security_group_id = aws_security_group.web_sg.id
+  security_group_id = aws_security_group.opmg_sg.id
   type              = "egress"
   protocol          = "tcp"
   from_port         = 443
