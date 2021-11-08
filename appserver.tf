@@ -32,15 +32,12 @@ resource "aws_instance" "app_server" {
     #    運用管理用
     aws_security_group.opmg_sg.id,
   ]
-
   #  キーペア
   key_name = aws_key_pair.keypair.key_name
-
   tags = {
     Name : "${var.project}-${var.environment}-app-ec2"
     Project : var.project
     Env  = var.environment
     Type = "app"
   }
-
 }
