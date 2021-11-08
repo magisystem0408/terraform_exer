@@ -7,6 +7,14 @@ terraform {
       version = "~>3.0"
     }
   }
+  #  tfstateをs3に置くことによって競合開発環境を可能にさせる
+  #  これをやったときinitが必要になる
+  backend "s3" {
+    bucket  = "tastylog-tsstate-bucket-nekomamushi"
+    key     = "tastylog-dev.tfstate"
+    region  = "ap-northeast-1"
+    profile = "terraform"
+  }
 }
 
 //プロバイダー選択
