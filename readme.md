@@ -33,3 +33,9 @@
 aws rds modify-db-instance --db-instance-identifier 'インスタンスID' 
 --master-user-password '新しいパスワード'
 ```
+
+
+## キーベア作成
+```shell
+ssh-keygen -t rsa -b 2048 -f tastlog-dev-keypair
+```
