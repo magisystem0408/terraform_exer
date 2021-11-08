@@ -21,3 +21,15 @@
 
 ## プレフィックスリスト
 複数のciderブロックの塊のことを表す
+
+## RDSのデータ構造
+- RDSインスタンス
+  - パラメータグループ
+  - オプショングループ
+  - サブネットグループ
+    - サブネット
+- 後からパスワードを変更する
+```shell
+aws rds modify-db-instance --db-instance-identifier 'インスタンスID' 
+--master-user-password '新しいパスワード'
+```
