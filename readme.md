@@ -74,3 +74,11 @@ terraform refresh
 これをするとAWSとローカルのtfstateが一致していて
 ソースコードだけがズレているようになる。
 terraform planから差分を確認する。
+
+
+
+## SCPコマンド
+
+```shell
+scp -i pemファイル 転送したいファイル ec2-user@ipアドレス:/home/ec2-user/
+```

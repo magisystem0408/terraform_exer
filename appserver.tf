@@ -14,6 +14,42 @@ resource "aws_key_pair" "keypair" {
   }
 }
 
+#パラメータストア作成
+#address
+resource "aws_ssm_parameter" "host" {
+  name  = "/${var.project}/${var.environment}/app/MYSQL_HOST"
+  type  = "String"
+  value = aws_db_instance.mysql_standalone.address
+}
+
+#ポート番号
+resource "aws_ssm_parameter" "port" {
+  name  = "/${var.project}/${var.environment}/app/MYSQL_PORT"
+  type  = "String"
+  value = aws_db_instance.mysql_standalone.port
+}
+
+#データベース名
+resource "aws_ssm_parameter" "database" {
+  name  = "/${var.project}/${var.environment}/app/MYSQL_DATABASE"
+  type  = "String"
+  value = aws_db_instance.mysql_standalone.name
+}
+
+#ユーザー名
+resource "aws_ssm_parameter" "username" {
+  name  = "/${var.project}/${var.environment}/app/MYSQL_USERNAME"
+  type  = "String"
+  value = aws_db_instance.mysql_standalone.username
+}
+
+#パスワード
+resource "aws_ssm_parameter" "password" {
+  name  = "/${var.project}/${var.environment}/app/MYSQL_PASSWORD"
+  type  = "SecureString"
+  value = aws_db_instance.mysql_standalone.password
+}
+
 
 #EC2インスタンス作成
 resource "aws_instance" "app_server" {
