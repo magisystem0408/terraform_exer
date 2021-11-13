@@ -25,6 +25,10 @@ resource "aws_instance" "app_server" {
   #  パブリックIP自動割り当て
   associate_public_ip_address = true
 
+  #インスタンスプロフィール関連を接続(iam)
+
+  iam_instance_profile = aws_iam_instance_profile.app_ec2_profile.name
+
   #  セキュリティグループ
   vpc_security_group_ids = [
     #    アプリケーションサーバー
@@ -41,3 +45,4 @@ resource "aws_instance" "app_server" {
     Type = "app"
   }
 }
+
