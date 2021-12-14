@@ -19,15 +19,18 @@ data "aws_ami" "app" {
 
   #  検索フィルター
   filter {
+    #    amiそのもの
     name = "name"
     #    ここで*にすることで複数検索できるようになる、
     values = ["amzn2-ami-hvm-2.0.*-x86_64-gp2"]
   }
   filter {
+    #    接続するブロックストレージの種類：基本はebs
     name   = "root-device-type"
     values = ["ebs"]
   }
   filter {
+    #    仮想化方式。：基本はhvm
     name   = "virtualization-type"
     values = ["hvm"]
   }

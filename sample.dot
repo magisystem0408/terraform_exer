@@ -1,0 +1,196 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_db_instance.mysql_standalone (expand)" [label = "aws_db_instance.mysql_standalone", shape = "box"]
+		"[root] aws_db_option_group.mysql_standalone_option_group (expand)" [label = "aws_db_option_group.mysql_standalone_option_group", shape = "box"]
+		"[root] aws_db_parameter_group.mysql-standalone-prameter_group (expand)" [label = "aws_db_parameter_group.mysql-standalone-prameter_group", shape = "box"]
+		"[root] aws_db_subnet_group.mysql_standalone_subnet_group (expand)" [label = "aws_db_subnet_group.mysql_standalone_subnet_group", shape = "box"]
+		"[root] aws_iam_instance_profile.app_ec2_profile (expand)" [label = "aws_iam_instance_profile.app_ec2_profile", shape = "box"]
+		"[root] aws_iam_role.app_iam_role (expand)" [label = "aws_iam_role.app_iam_role", shape = "box"]
+		"[root] aws_iam_role_policy_attachment.app_iam_role_ec2_readonly (expand)" [label = "aws_iam_role_policy_attachment.app_iam_role_ec2_readonly", shape = "box"]
+		"[root] aws_iam_role_policy_attachment.app_iam_role_s3_readonly (expand)" [label = "aws_iam_role_policy_attachment.app_iam_role_s3_readonly", shape = "box"]
+		"[root] aws_iam_role_policy_attachment.app_iam_role_ssm_managed (expand)" [label = "aws_iam_role_policy_attachment.app_iam_role_ssm_managed", shape = "box"]
+		"[root] aws_iam_role_policy_attachment.app_iam_role_ssm_readonly (expand)" [label = "aws_iam_role_policy_attachment.app_iam_role_ssm_readonly", shape = "box"]
+		"[root] aws_instance.app_server (expand)" [label = "aws_instance.app_server", shape = "box"]
+		"[root] aws_internet_gateway.igw (expand)" [label = "aws_internet_gateway.igw", shape = "box"]
+		"[root] aws_key_pair.keypair (expand)" [label = "aws_key_pair.keypair", shape = "box"]
+		"[root] aws_route.public_rt_igw_r (expand)" [label = "aws_route.public_rt_igw_r", shape = "box"]
+		"[root] aws_route_table.private_rt (expand)" [label = "aws_route_table.private_rt", shape = "box"]
+		"[root] aws_route_table.public_rt (expand)" [label = "aws_route_table.public_rt", shape = "box"]
+		"[root] aws_route_table_association.private_rt_1a (expand)" [label = "aws_route_table_association.private_rt_1a", shape = "box"]
+		"[root] aws_route_table_association.private_rt_1c (expand)" [label = "aws_route_table_association.private_rt_1c", shape = "box"]
+		"[root] aws_route_table_association.public_rt_1a (expand)" [label = "aws_route_table_association.public_rt_1a", shape = "box"]
+		"[root] aws_route_table_association.public_rt_1c (expand)" [label = "aws_route_table_association.public_rt_1c", shape = "box"]
+		"[root] aws_security_group.app_sg (expand)" [label = "aws_security_group.app_sg", shape = "box"]
+		"[root] aws_security_group.db_sg (expand)" [label = "aws_security_group.db_sg", shape = "box"]
+		"[root] aws_security_group.opmg_sg (expand)" [label = "aws_security_group.opmg_sg", shape = "box"]
+		"[root] aws_security_group.web_sg (expand)" [label = "aws_security_group.web_sg", shape = "box"]
+		"[root] aws_security_group_rule.app_in_tcp3000 (expand)" [label = "aws_security_group_rule.app_in_tcp3000", shape = "box"]
+		"[root] aws_security_group_rule.app_out_http (expand)" [label = "aws_security_group_rule.app_out_http", shape = "box"]
+		"[root] aws_security_group_rule.app_out_tcp3000 (expand)" [label = "aws_security_group_rule.app_out_tcp3000", shape = "box"]
+		"[root] aws_security_group_rule.app_out_tcp3306 (expand)" [label = "aws_security_group_rule.app_out_tcp3306", shape = "box"]
+		"[root] aws_security_group_rule.db_in_tcp3306 (expand)" [label = "aws_security_group_rule.db_in_tcp3306", shape = "box"]
+		"[root] aws_security_group_rule.opmg_in_ssh (expand)" [label = "aws_security_group_rule.opmg_in_ssh", shape = "box"]
+		"[root] aws_security_group_rule.opmng_in_tcp3000 (expand)" [label = "aws_security_group_rule.opmng_in_tcp3000", shape = "box"]
+		"[root] aws_security_group_rule.opmng_out_http (expand)" [label = "aws_security_group_rule.opmng_out_http", shape = "box"]
+		"[root] aws_security_group_rule.opmng_out_https (expand)" [label = "aws_security_group_rule.opmng_out_https", shape = "box"]
+		"[root] aws_security_group_rule.web_in_https (expand)" [label = "aws_security_group_rule.web_in_https", shape = "box"]
+		"[root] aws_security_group_rule.web_out_tcp3000 (expand)" [label = "aws_security_group_rule.web_out_tcp3000", shape = "box"]
+		"[root] aws_ssm_parameter.database (expand)" [label = "aws_ssm_parameter.database", shape = "box"]
+		"[root] aws_ssm_parameter.host (expand)" [label = "aws_ssm_parameter.host", shape = "box"]
+		"[root] aws_ssm_parameter.password (expand)" [label = "aws_ssm_parameter.password", shape = "box"]
+		"[root] aws_ssm_parameter.port (expand)" [label = "aws_ssm_parameter.port", shape = "box"]
+		"[root] aws_ssm_parameter.username (expand)" [label = "aws_ssm_parameter.username", shape = "box"]
+		"[root] aws_subnet.private_subnet_1a (expand)" [label = "aws_subnet.private_subnet_1a", shape = "box"]
+		"[root] aws_subnet.private_subnet_1c (expand)" [label = "aws_subnet.private_subnet_1c", shape = "box"]
+		"[root] aws_subnet.public_subnet_1a (expand)" [label = "aws_subnet.public_subnet_1a", shape = "box"]
+		"[root] aws_subnet.public_subnet_1c (expand)" [label = "aws_subnet.public_subnet_1c", shape = "box"]
+		"[root] aws_vpc.vpc (expand)" [label = "aws_vpc.vpc", shape = "box"]
+		"[root] data.aws_ami.app (expand)" [label = "data.aws_ami.app", shape = "box"]
+		"[root] data.aws_iam_policy_document.ec2_assume_role (expand)" [label = "data.aws_iam_policy_document.ec2_assume_role", shape = "box"]
+		"[root] data.aws_prefix_list.s3_pl (expand)" [label = "data.aws_prefix_list.s3_pl", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/random\"]" [label = "provider[\"registry.terraform.io/hashicorp/random\"]", shape = "diamond"]
+		"[root] random_string.db_password (expand)" [label = "random_string.db_password", shape = "box"]
+		"[root] var.environment" [label = "var.environment", shape = "note"]
+		"[root] var.project" [label = "var.project", shape = "note"]
+		"[root] aws_db_instance.mysql_standalone (expand)" -> "[root] aws_db_option_group.mysql_standalone_option_group (expand)"
+		"[root] aws_db_instance.mysql_standalone (expand)" -> "[root] aws_db_parameter_group.mysql-standalone-prameter_group (expand)"
+		"[root] aws_db_instance.mysql_standalone (expand)" -> "[root] aws_db_subnet_group.mysql_standalone_subnet_group (expand)"
+		"[root] aws_db_instance.mysql_standalone (expand)" -> "[root] aws_security_group.db_sg (expand)"
+		"[root] aws_db_instance.mysql_standalone (expand)" -> "[root] random_string.db_password (expand)"
+		"[root] aws_db_option_group.mysql_standalone_option_group (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_db_option_group.mysql_standalone_option_group (expand)" -> "[root] var.environment"
+		"[root] aws_db_option_group.mysql_standalone_option_group (expand)" -> "[root] var.project"
+		"[root] aws_db_parameter_group.mysql-standalone-prameter_group (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_db_parameter_group.mysql-standalone-prameter_group (expand)" -> "[root] var.environment"
+		"[root] aws_db_parameter_group.mysql-standalone-prameter_group (expand)" -> "[root] var.project"
+		"[root] aws_db_subnet_group.mysql_standalone_subnet_group (expand)" -> "[root] aws_subnet.private_subnet_1a (expand)"
+		"[root] aws_db_subnet_group.mysql_standalone_subnet_group (expand)" -> "[root] aws_subnet.private_subnet_1c (expand)"
+		"[root] aws_iam_instance_profile.app_ec2_profile (expand)" -> "[root] aws_iam_role.app_iam_role (expand)"
+		"[root] aws_iam_role.app_iam_role (expand)" -> "[root] data.aws_iam_policy_document.ec2_assume_role (expand)"
+		"[root] aws_iam_role.app_iam_role (expand)" -> "[root] var.environment"
+		"[root] aws_iam_role.app_iam_role (expand)" -> "[root] var.project"
+		"[root] aws_iam_role_policy_attachment.app_iam_role_ec2_readonly (expand)" -> "[root] aws_iam_role.app_iam_role (expand)"
+		"[root] aws_iam_role_policy_attachment.app_iam_role_s3_readonly (expand)" -> "[root] aws_iam_role.app_iam_role (expand)"
+		"[root] aws_iam_role_policy_attachment.app_iam_role_ssm_managed (expand)" -> "[root] aws_iam_role.app_iam_role (expand)"
+		"[root] aws_iam_role_policy_attachment.app_iam_role_ssm_readonly (expand)" -> "[root] aws_iam_role.app_iam_role (expand)"
+		"[root] aws_instance.app_server (expand)" -> "[root] aws_iam_instance_profile.app_ec2_profile (expand)"
+		"[root] aws_instance.app_server (expand)" -> "[root] aws_key_pair.keypair (expand)"
+		"[root] aws_instance.app_server (expand)" -> "[root] aws_security_group.app_sg (expand)"
+		"[root] aws_instance.app_server (expand)" -> "[root] aws_security_group.opmg_sg (expand)"
+		"[root] aws_instance.app_server (expand)" -> "[root] aws_subnet.public_subnet_1a (expand)"
+		"[root] aws_instance.app_server (expand)" -> "[root] data.aws_ami.app (expand)"
+		"[root] aws_internet_gateway.igw (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_key_pair.keypair (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_key_pair.keypair (expand)" -> "[root] var.environment"
+		"[root] aws_key_pair.keypair (expand)" -> "[root] var.project"
+		"[root] aws_route.public_rt_igw_r (expand)" -> "[root] aws_internet_gateway.igw (expand)"
+		"[root] aws_route.public_rt_igw_r (expand)" -> "[root] aws_route_table.public_rt (expand)"
+		"[root] aws_route_table.private_rt (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_route_table.public_rt (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_route_table_association.private_rt_1a (expand)" -> "[root] aws_route_table.private_rt (expand)"
+		"[root] aws_route_table_association.private_rt_1a (expand)" -> "[root] aws_subnet.private_subnet_1a (expand)"
+		"[root] aws_route_table_association.private_rt_1c (expand)" -> "[root] aws_route_table.private_rt (expand)"
+		"[root] aws_route_table_association.private_rt_1c (expand)" -> "[root] aws_subnet.private_subnet_1c (expand)"
+		"[root] aws_route_table_association.public_rt_1a (expand)" -> "[root] aws_route_table.public_rt (expand)"
+		"[root] aws_route_table_association.public_rt_1a (expand)" -> "[root] aws_subnet.public_subnet_1a (expand)"
+		"[root] aws_route_table_association.public_rt_1c (expand)" -> "[root] aws_route_table.public_rt (expand)"
+		"[root] aws_route_table_association.public_rt_1c (expand)" -> "[root] aws_subnet.public_subnet_1c (expand)"
+		"[root] aws_security_group.app_sg (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_security_group.db_sg (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_security_group.opmg_sg (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_security_group.web_sg (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_security_group_rule.app_in_tcp3000 (expand)" -> "[root] aws_security_group.app_sg (expand)"
+		"[root] aws_security_group_rule.app_in_tcp3000 (expand)" -> "[root] aws_security_group.web_sg (expand)"
+		"[root] aws_security_group_rule.app_out_http (expand)" -> "[root] aws_security_group.app_sg (expand)"
+		"[root] aws_security_group_rule.app_out_http (expand)" -> "[root] data.aws_prefix_list.s3_pl (expand)"
+		"[root] aws_security_group_rule.app_out_tcp3000 (expand)" -> "[root] aws_security_group.app_sg (expand)"
+		"[root] aws_security_group_rule.app_out_tcp3000 (expand)" -> "[root] data.aws_prefix_list.s3_pl (expand)"
+		"[root] aws_security_group_rule.app_out_tcp3306 (expand)" -> "[root] aws_security_group.app_sg (expand)"
+		"[root] aws_security_group_rule.app_out_tcp3306 (expand)" -> "[root] aws_security_group.db_sg (expand)"
+		"[root] aws_security_group_rule.db_in_tcp3306 (expand)" -> "[root] aws_security_group.app_sg (expand)"
+		"[root] aws_security_group_rule.db_in_tcp3306 (expand)" -> "[root] aws_security_group.db_sg (expand)"
+		"[root] aws_security_group_rule.opmg_in_ssh (expand)" -> "[root] aws_security_group.opmg_sg (expand)"
+		"[root] aws_security_group_rule.opmng_in_tcp3000 (expand)" -> "[root] aws_security_group.opmg_sg (expand)"
+		"[root] aws_security_group_rule.opmng_out_http (expand)" -> "[root] aws_security_group.opmg_sg (expand)"
+		"[root] aws_security_group_rule.opmng_out_https (expand)" -> "[root] aws_security_group.opmg_sg (expand)"
+		"[root] aws_security_group_rule.web_in_https (expand)" -> "[root] aws_security_group.web_sg (expand)"
+		"[root] aws_security_group_rule.web_out_tcp3000 (expand)" -> "[root] aws_security_group.app_sg (expand)"
+		"[root] aws_security_group_rule.web_out_tcp3000 (expand)" -> "[root] aws_security_group.web_sg (expand)"
+		"[root] aws_ssm_parameter.database (expand)" -> "[root] aws_db_instance.mysql_standalone (expand)"
+		"[root] aws_ssm_parameter.host (expand)" -> "[root] aws_db_instance.mysql_standalone (expand)"
+		"[root] aws_ssm_parameter.password (expand)" -> "[root] aws_db_instance.mysql_standalone (expand)"
+		"[root] aws_ssm_parameter.port (expand)" -> "[root] aws_db_instance.mysql_standalone (expand)"
+		"[root] aws_ssm_parameter.username (expand)" -> "[root] aws_db_instance.mysql_standalone (expand)"
+		"[root] aws_subnet.private_subnet_1a (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_subnet.private_subnet_1c (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_subnet.public_subnet_1a (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_subnet.public_subnet_1c (expand)" -> "[root] aws_vpc.vpc (expand)"
+		"[root] aws_vpc.vpc (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_vpc.vpc (expand)" -> "[root] var.environment"
+		"[root] aws_vpc.vpc (expand)" -> "[root] var.project"
+		"[root] data.aws_ami.app (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.aws_iam_policy_document.ec2_assume_role (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.aws_prefix_list.s3_pl (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_role_policy_attachment.app_iam_role_ec2_readonly (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_role_policy_attachment.app_iam_role_s3_readonly (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_role_policy_attachment.app_iam_role_ssm_managed (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_role_policy_attachment.app_iam_role_ssm_readonly (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_instance.app_server (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route.public_rt_igw_r (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route_table_association.private_rt_1a (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route_table_association.private_rt_1c (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route_table_association.public_rt_1a (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route_table_association.public_rt_1c (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.app_in_tcp3000 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.app_out_http (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.app_out_tcp3000 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.app_out_tcp3306 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.db_in_tcp3306 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.opmg_in_ssh (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.opmng_in_tcp3000 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.opmng_out_http (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.opmng_out_https (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.web_in_https (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group_rule.web_out_tcp3000 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_ssm_parameter.database (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_ssm_parameter.host (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_ssm_parameter.password (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_ssm_parameter.port (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_ssm_parameter.username (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_role_policy_attachment.app_iam_role_ec2_readonly (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_role_policy_attachment.app_iam_role_s3_readonly (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_role_policy_attachment.app_iam_role_ssm_managed (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_role_policy_attachment.app_iam_role_ssm_readonly (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.app_server (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route.public_rt_igw_r (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.private_rt_1a (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.private_rt_1c (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.public_rt_1a (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.public_rt_1c (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.app_in_tcp3000 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.app_out_http (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.app_out_tcp3000 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.app_out_tcp3306 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.db_in_tcp3306 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.opmg_in_ssh (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.opmng_in_tcp3000 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.opmng_out_http (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.opmng_out_https (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.web_in_https (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group_rule.web_out_tcp3000 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_ssm_parameter.database (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_ssm_parameter.host (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_ssm_parameter.password (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_ssm_parameter.port (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_ssm_parameter.username (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)" -> "[root] random_string.db_password (expand)"
+		"[root] random_string.db_password (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"]"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)"
+	}
+}
+

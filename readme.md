@@ -82,3 +82,8 @@ terraform planから差分を確認する。
 ```shell
 scp -i pemファイル 転送したいファイル ec2-user@ipアドレス:/home/ec2-user/
 ```
+
+
+## 暗黙の依存関係定義
+
+ S3など
