@@ -14,6 +14,25 @@ resource "aws_lb" "alb" {
   ]
 }
 
+#リスナー
+#httpを受け付ける
+resource "aws_lb_listener" "aws_listener_http" {
+  load_balancer_arn = aws_lb.alb.arn
+  port = 80
+  protocol = "HTTP"
+
+#  転送先
+  default_action {
+  #    そのまま転送する
+    type = "forward"
+
+    #    どこに送るか
+    target_group_arn = aws_lb_target_group.alb_target_group.arn
+  }
+}
+
+
+
 #ターゲットグループ
 resource "aws_lb_target_group" "alb_target_group" {
   name ="${var.project}-${var.environment}-app-tg"
@@ -30,8 +49,13 @@ resource "aws_lb_target_group" "alb_target_group" {
 
 #ターゲットグループアタッチメント
 resource "aws_lb_target_group_attachment" "instance" {
+#  ロードバランサーのaln
   target_group_arn = aws_lb_target_group.alb_target_group.arn
 
   #  所属させたいインスタンス
   target_id        = aws_instance.app_server.id
 }
+
+
+
+
