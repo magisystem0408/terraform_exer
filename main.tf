@@ -19,6 +19,7 @@ terraform {
 
 //プロバイダー選択
 provider "aws" {
+  #  ここでawsConfigureのプロファイルを切り替えられる
   profile = "terraform"
   region  = "ap-northeast-1"
 }

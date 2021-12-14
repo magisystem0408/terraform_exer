@@ -88,7 +88,6 @@ resource "aws_db_instance" "mysql_standalone" {
   port = 3306
 
 
-
   #  データベース設定まわり
   name = "tastylog"
   #  パラメータグループの紐付け
