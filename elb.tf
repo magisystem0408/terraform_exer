@@ -18,12 +18,12 @@ resource "aws_lb" "alb" {
 #httpを受け付ける
 resource "aws_lb_listener" "aws_listener_http" {
   load_balancer_arn = aws_lb.alb.arn
-  port = 80
-  protocol = "HTTP"
+  port              = 80
+  protocol          = "HTTP"
 
-#  転送先
+  #  転送先
   default_action {
-  #    そのまま転送する
+    #    そのまま転送する
     type = "forward"
 
     #    どこに送るか
@@ -32,30 +32,28 @@ resource "aws_lb_listener" "aws_listener_http" {
 }
 
 
-
 #ターゲットグループ
 resource "aws_lb_target_group" "alb_target_group" {
-  name ="${var.project}-${var.environment}-app-tg"
-  port=3000
+  name     = "${var.project}-${var.environment}-app-tg"
+  port     = 3000
   protocol = "HTTP"
-  vpc_id = aws_vpc.vpc.id
+  vpc_id   = aws_vpc.vpc.id
 
   tags = {
-    Name = "${var.project}-${var.environment}-app-tg"
+    Name    = "${var.project}-${var.environment}-app-tg"
     Project = var.project
-    Env  = var.environment
+    Env     = var.environment
   }
 }
 
 #ターゲットグループアタッチメント
 resource "aws_lb_target_group_attachment" "instance" {
-#  ロードバランサーのaln
+  #  ロードバランサーのaln
   target_group_arn = aws_lb_target_group.alb_target_group.arn
 
   #  所属させたいインスタンス
-  target_id        = aws_instance.app_server.id
+  target_id = aws_instance.app_server.id
 }
-
 
 
 
